@@ -188,6 +188,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
 }
@@ -203,7 +204,7 @@ ol {
   line-height: 1;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -268,10 +269,6 @@ ol {
 .content__list-item {
   padding-right: 3px;
   padding-left: 3px;
-}
-
-.content__card-link {
-  display: block;
 }
 
 .content__card-link_current:active {
