@@ -128,9 +128,14 @@ ol {
   font-size: 18px;
 }
 
-.search-form__label:hover .search-form__label-text {
+.search-form__label-text:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.search-form__checkbox:checked ~ .search-form__label-text,
+.search-form__checkbox:checked + .search-form__label .search-form__label-text {
+  text-decoration: none;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) .search-form__label {
@@ -140,7 +145,7 @@ ol {
 .search-form__textfield {
   width: 225px;
   max-width: 100%;
-  height: 27px;
+  min-height: 27px;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -232,6 +237,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__list-container {
@@ -271,13 +277,30 @@ ol {
   padding-left: 3px;
 }
 
-.content__card-link_current:active {
+.content__card-link_current {
   background-color: #545050;
 }
 
-.content__card-link:hover {
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
   text-decoration: underline;
   text-underline-offset: 1px;
+}
+
+.content__card-link_current:hover .content__video-card-title,
+.content__card-link_current:hover .content__video-card-description {
+  text-decoration: none;
+}
+
+.content__card-link:active .content__video-card-title,
+.content__card-link:active .content__video-card-description,
+.content__card-link:hover:active .content__video-card-title,
+.content__card-link:hover:active .content__video-card-description {
+  text-decoration: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:focus {
@@ -286,6 +309,7 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
+  outline-offset: -1px;
 }
 
 .button {
@@ -303,11 +327,11 @@ ol {
 .search-form__submit-button {
   align-self: end;
   width: 194px;
-  height: 34px;
+  min-height: 34px;
 }
 
 .more-button {
-  width: 100%;
+  width: 390px;
   padding: 5px 0;
 }
 
@@ -316,6 +340,7 @@ ol {
 }
 
 .button:active {
+  text-decoration: none;
   background-color: #545050;
 }
 
